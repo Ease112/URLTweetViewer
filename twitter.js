@@ -96,14 +96,6 @@ function show(screen_name, name, profile_image_url, tweet, urls, date){
 	);
 }
 
-function disp(url) {
-	if(!window.opener || window.opener.closed){
-		window.alert('The main window is not found');
-	} else{
-		window.opener.open(url);
-	}
-}
-
 function readTimeLine(){
 	$("#timeline").children().remove();
 	var content = {count: "200", callback: "update"};
