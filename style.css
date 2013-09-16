@@ -1,0 +1,9 @@
+body {
+	line-height: 1.2em;
+	font-size: 15px;
+}
+
+table {
+	border: 1px solid #888;
+	width: 280px; 
+}
