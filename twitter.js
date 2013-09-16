@@ -103,10 +103,8 @@ function readTimeLine(){
 }
 
 $(function(){
-	
 	readTimeLine();
-    setInterval("readTimeLine()", 120000);
-    
+	setInterval("readTimeLine()", 120000);
     $(document).on("click",".disp",function(e) {
     	e.stopPropagation();
 		if(!window.opener || window.opener.closed)
