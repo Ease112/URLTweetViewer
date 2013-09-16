@@ -20,11 +20,11 @@ ConsumerKey, ConsumerSecret, AccessToken, TokenSecretは自分のものが必要
 https://dev.twitter.com/  
   
 twitter.jsの以下に埋め込む  
-    Twitter.prototype = {
+    `Twitter.prototype = {
         consumerKey:    "",
         consumerSecret: "",
         accessToken:    "",
         tokenSecret:    ""
-    };
+    };`
 
 Chromeの設定＞ツール＞拡張機能＞デベロッパーモードにチェック＞パッケージ化されてない拡張機能を読み込む
