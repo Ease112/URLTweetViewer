@@ -87,7 +87,7 @@ function filter(urls) {
 
 function show(screen_name, name, profile_image_url, tweet, urls, date){
 	var tweetDate = new Date(date);
-	$("#timeline").append(
+	$("#TL").append(
 		"<table>" + 
 			"<tr><td colspan='2'>" + name + "　-　" + screen_name + "</td></tr>" +
 			"<tr><td><img src='" + profile_image_url + "' width='40'></td><td>" + tweet.replace(/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/g, "<a href='#' class='disp'>$&</a>") +"</td></tr>" +
@@ -97,7 +97,7 @@ function show(screen_name, name, profile_image_url, tweet, urls, date){
 }
 
 function readTimeLine(){
-	$("#timeline").children().remove();
+	$("#TL").children().remove();
 	var content = {count: "200", callback: "update"};
     twitter.get("https://api.twitter.com/1.1/statuses/home_timeline.json", content);
 }

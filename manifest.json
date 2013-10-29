@@ -1,6 +1,6 @@
 {
   "name": "URLTweetViewer",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "description": "タイムラインからURL付きツイートのみ抽出して表示する拡張機能",
   "background": {
