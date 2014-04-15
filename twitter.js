@@ -1,4 +1,5 @@
-﻿function Twitter() {}
+var twitter;
+function Twitter() {};
 Twitter.prototype = {
         consumerKey:    "",
         consumerSecret: "",
@@ -38,7 +39,7 @@ Twitter.prototype.get = function(api, content) {
     $.ajax(options);
 }
  
-var twitter = new Twitter();
+
  
 function update(data){
 	var user;
@@ -87,7 +88,7 @@ function filter(urls) {
 
 function show(screen_name, name, profile_image_url, tweet, urls, date){
 	var tweetDate = new Date(date);
-	$("#TL").append(
+	$("#tl").append(
 		"<table>" + 
 			"<tr><td colspan='2'>" + name + "　-　" + screen_name + "</td></tr>" +
 			"<tr><td><img src='" + profile_image_url + "' width='40'></td><td>" + tweet.replace(/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/g, "<a href='#' class='disp'>$&</a>") +"</td></tr>" +
@@ -97,13 +98,22 @@ function show(screen_name, name, profile_image_url, tweet, urls, date){
 }
 
 function readTimeLine(){
-	$("#TL").children().remove();
+	$("#tl").children().remove();
 	var content = {count: "200", callback: "update"};
     twitter.get("https://api.twitter.com/1.1/statuses/home_timeline.json", content);
 }
 
 $(function(){
-	setInterval("readTimeLine()", 120000);
+	twitter = new Twitter();
+	readTimeLine();
+	//chrome.runtime.onInstalled.addListener(function() {
+		// 5分毎にイベントを発生させる
+		//chrome.alarms.create('foo', { periodInMinutes: 2 });
+	//});
+    setInterval(function(){
+		readTimeLine();
+	}, 120000);
+    
     $(document).on("click",".disp",function(e) {
     	e.stopPropagation();
 		if(!window.opener || window.opener.closed)

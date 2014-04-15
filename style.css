@@ -1,3 +1,7 @@
+html {
+	margin: 0px !important;
+	width: 320px !important;
+}
 body {
 	line-height: 1.2em;
 	font-size: 15px;
@@ -5,5 +9,5 @@ body {
 
 table {
 	border: 1px solid #888;
-	width: 280px; 
+	width: 280px !important; 
 }
