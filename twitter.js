@@ -106,10 +106,6 @@ function readTimeLine(){
 $(function(){
 	twitter = new Twitter();
 	readTimeLine();
-	//chrome.runtime.onInstalled.addListener(function() {
-		// 5分毎にイベントを発生させる
-		//chrome.alarms.create('foo', { periodInMinutes: 2 });
-	//});
     setInterval(function(){
 		readTimeLine();
 	}, 120000);
